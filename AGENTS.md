@@ -16,6 +16,11 @@ never hand-drawn colors, spacing or icons. If the design itself needs to change,
 - `src/pages/` — routes: `index.astro`, `blog/index.astro`, `blog/[...slug].astro`, `tags/index.astro`, `tags/[tag].astro`, `about.astro`, `rss.xml.js`.
 - `src/content/blog/` — post Markdown content.
 - `src/shiki/`, `src/plugins/` — the custom Shiki theme and rehype plugin that map code blocks onto the CodeBlock component.
+- `src/styles/global.css` — a minimal reset layered under `public/assets/blog.css`; not the site's look.
+- `src/lib/reading-time.ts` — shared words-per-minute helper used by post pages and PostCard lists.
+- `src/consts.ts` — the site title and description, unchanged by the redesign.
+- `astro.config.mjs` — site config: integrations, and the Shiki/rehype setup that wires code blocks to CodeBlock.
+- `.github/workflows/deploy.yml` — builds and deploys the site to GitHub Pages.
 
 ## Development
 
