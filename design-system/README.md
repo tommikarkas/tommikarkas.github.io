@@ -50,7 +50,7 @@ Icons are solid signage pictograms copied from the public-domain set at `apancik
 - Use them with `<img src="/assets/icons/<name>.svg" width="16" height="16" alt="">` at 16px beside text, 20px in the comments heading, 14px in the footer, 12px on a badge. The `alt` is empty when a word sits next to the icon, which it always should.
 - The ink is baked in, so an icon on a cyan or amber fill needs `filter: brightness(0)` (already applied to `.nt-btn img`).
 - There is no GitHub, Mastodon or RSS brand mark: those logos are trademarked and not in the public domain. Write the word and use `external-link`, `mail` or `bolt` beside it.
-- The blog's own mark (`assets/Marks/nt-mark.svg`: a cyan prompt chevron with a magenta cursor block) is original to this system and released under the same CC0 terms; `nt-favicon.svg` is the same mark on `bg-000` for the tab.
+- The blog's logo is the rat (`assets/Marks/nt-rat.svg`): a solid side-profile silhouette in `cyan-500` with a `magenta-500` eye, drawn in the same flat signage style as the icons. None of the public-domain sets reachable for this system had a rodent, so it is original work released CC0 like the icons; `nt-rat-favicon.svg` is the same rat on `bg-000` for the tab. The prompt chevron (`nt-mark.svg`) remains as a secondary mark for terminal-flavoured spots such as the `> _` rule.
 
 ## Components
 

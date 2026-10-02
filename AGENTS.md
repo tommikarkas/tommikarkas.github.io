@@ -7,6 +7,16 @@ pages or components) must follow `design-system/README.md` and each component's
 never hand-drawn colors, spacing or icons. If the design itself needs to change, change
 `design-system/` first, then update the site to match.
 
+**Known, accepted deviation:** the rat mark (`assets/Marks/nt-rat.svg`,
+`nt-rat-favicon.svg`) faces left as shipped in the design system, so in
+`SiteHeader` — where it sits before the brand name — it faces away from the
+text rather than toward it, as `assets/Marks/README.md` says it should. This
+was flagged by design review and accepted as-is (captain's decision,
+2026-10-02): the asset is used unmodified, matching the design system's own
+`SiteHeader` preview exactly. Don't re-flag this specific mismatch; the
+design system owner will revise the orientation rule or the artwork upstream
+later. Any *other* orientation/placement issue is still a real finding.
+
 ## Design review enforcement
 
 Before finishing any change that touches UI or content — anything under

@@ -1,255 +1,276 @@
 {
-  "v": 3,
-  "assetGroups": {
-    "Giscus": {
-      "files": {},
-      "name": "Giscus",
-      "order": [],
-      "tile": "m"
+ "v": 3,
+ "assetGroups": {
+  "Giscus": {
+   "files": {},
+   "name": "Giscus",
+   "order": [],
+   "tile": "m"
+  },
+  "Icons": {
+   "files": {
+    "alert.svg": {
+     "blob": "0792e2518d752e8ada8be09f31a23a0c",
+     "name": "alert.svg",
+     "size": 385,
+     "type": "image/svg+xml"
     },
-    "Icons": {
-      "files": {
-        "alert.svg": {
-          "blob": "0792e2518d752e8ada8be09f31a23a0c",
-          "name": "alert.svg",
-          "size": 385,
-          "type": "image/svg+xml"
-        },
-        "arrow-left.svg": {
-          "blob": "2b4be94fc0c157a1e5cade244d3238dd",
-          "name": "arrow-left.svg",
-          "size": 343,
-          "type": "image/svg+xml"
-        },
-        "arrow-right.svg": {
-          "blob": "b1c19f5bc3a591b5bac99b4596a127a6",
-          "name": "arrow-right.svg",
-          "size": 341,
-          "type": "image/svg+xml"
-        },
-        "arrow-up.svg": {
-          "blob": "62fcc5022d8eb9296d19f5cda488f1b7",
-          "name": "arrow-up.svg",
-          "size": 335,
-          "type": "image/svg+xml"
-        },
-        "bolt.svg": {
-          "blob": "ac411dca4df5ed8fbf8d5e1ed3890eac",
-          "name": "bolt.svg",
-          "size": 274,
-          "type": "image/svg+xml"
-        },
-        "check.svg": {
-          "blob": "9b0ae85389e248cd817f4791b9848170",
-          "name": "check.svg",
-          "size": 298,
-          "type": "image/svg+xml"
-        },
-        "chevron-left.svg": {
-          "blob": "f8b53be39575d9ff50cb7b330ee5ac16",
-          "name": "chevron-left.svg",
-          "size": 318,
-          "type": "image/svg+xml"
-        },
-        "chevron-right.svg": {
-          "blob": "d7742c1511a0c9cfb12ac9c7899a1519",
-          "name": "chevron-right.svg",
-          "size": 321,
-          "type": "image/svg+xml"
-        },
-        "clock.svg": {
-          "blob": "c0d024a994bef6510f105728317fdfa1",
-          "name": "clock.svg",
-          "size": 690,
-          "type": "image/svg+xml"
-        },
-        "comment.svg": {
-          "blob": "4585c626485a8cc70b2e6b9c7fb83bc8",
-          "name": "comment.svg",
-          "size": 406,
-          "type": "image/svg+xml"
-        },
-        "cross.svg": {
-          "blob": "16b09c43764f724dc4506c169c6d50be",
-          "name": "cross.svg",
-          "size": 333,
-          "type": "image/svg+xml"
-        },
-        "download.svg": {
-          "blob": "a37d45ae41ec8d9a25544de1734b4501",
-          "name": "download.svg",
-          "size": 425,
-          "type": "image/svg+xml"
-        },
-        "external-link.svg": {
-          "blob": "a641bbf648ac1d71fc2238c4e438372a",
-          "name": "external-link.svg",
-          "size": 456,
-          "type": "image/svg+xml"
-        },
-        "eye.svg": {
-          "blob": "6aaf66bea480bac8fd55885941bb4717",
-          "name": "eye.svg",
-          "size": 1144,
-          "type": "image/svg+xml"
-        },
-        "file.svg": {
-          "blob": "829943efcec1e6a7c0d8b9035827428e",
-          "name": "file.svg",
-          "size": 271,
-          "type": "image/svg+xml"
-        },
-        "folder.svg": {
-          "blob": "85eb3c6e495b41daa2a16241a04b3b0e",
-          "name": "folder.svg",
-          "size": 406,
-          "type": "image/svg+xml"
-        },
-        "gear.svg": {
-          "blob": "58ece2395502176162a26bc2599cdc84",
-          "name": "gear.svg",
-          "size": 1651,
-          "type": "image/svg+xml"
-        },
-        "grid.svg": {
-          "blob": "c3d8cb967118c12aa1f414508b267d36",
-          "name": "grid.svg",
-          "size": 381,
-          "type": "image/svg+xml"
-        },
-        "help.svg": {
-          "blob": "b3c1074df906e2878abd1293efb81a89",
-          "name": "help.svg",
-          "size": 915,
-          "type": "image/svg+xml"
-        },
-        "home.svg": {
-          "blob": "987cfb57d38f4c53513fc05e6419b643",
-          "name": "home.svg",
-          "size": 292,
-          "type": "image/svg+xml"
-        },
-        "mail.svg": {
-          "blob": "aa1962ff1aba3ca191d93d4579deea1e",
-          "name": "mail.svg",
-          "size": 580,
-          "type": "image/svg+xml"
-        },
-        "plus.svg": {
-          "blob": "6f4365365be378dda3f40b605b03a035",
-          "name": "plus.svg",
-          "size": 267,
-          "type": "image/svg+xml"
-        },
-        "power.svg": {
-          "blob": "159e4e0661daed3a57edec85803a64d2",
-          "name": "power.svg",
-          "size": 697,
-          "type": "image/svg+xml"
-        },
-        "reload.svg": {
-          "blob": "4be6350e37879f7b133d39aa8a212bbd",
-          "name": "reload.svg",
-          "size": 580,
-          "type": "image/svg+xml"
-        },
-        "search.svg": {
-          "blob": "77525649322c66576bd8b8964830db60",
-          "name": "search.svg",
-          "size": 388,
-          "type": "image/svg+xml"
-        },
-        "star.svg": {
-          "blob": "6c413211041fa1c974e801a8caa2e9f6",
-          "name": "star.svg",
-          "size": 324,
-          "type": "image/svg+xml"
-        }
-      },
-      "name": "Icons",
-      "order": [
-        "alert.svg",
-        "arrow-left.svg",
-        "arrow-right.svg",
-        "arrow-up.svg",
-        "bolt.svg",
-        "check.svg",
-        "chevron-left.svg",
-        "chevron-right.svg",
-        "clock.svg",
-        "comment.svg",
-        "cross.svg",
-        "download.svg",
-        "external-link.svg",
-        "eye.svg",
-        "file.svg",
-        "folder.svg",
-        "gear.svg",
-        "grid.svg",
-        "help.svg",
-        "home.svg",
-        "mail.svg",
-        "plus.svg",
-        "power.svg",
-        "reload.svg",
-        "search.svg",
-        "star.svg"
-      ],
-      "tile": "s"
+    "arrow-left.svg": {
+     "blob": "2b4be94fc0c157a1e5cade244d3238dd",
+     "name": "arrow-left.svg",
+     "size": 343,
+     "type": "image/svg+xml"
     },
-    "Marks": {
-      "files": {
-        "nt-favicon.svg": {
-          "blob": "49f18c96958c47415b3fee5d2517ce71",
-          "name": "nt-favicon.svg",
-          "size": 233,
-          "type": "image/svg+xml"
-        },
-        "nt-mark-mono.svg": {
-          "blob": "aba2a1e392ecdd2103a334251d689b0d",
-          "name": "nt-mark-mono.svg",
-          "size": 205,
-          "type": "image/svg+xml"
-        },
-        "nt-mark.svg": {
-          "blob": "31cb8267b929ca0d0be5bfe4689bd019",
-          "name": "nt-mark.svg",
-          "size": 232,
-          "type": "image/svg+xml"
-        }
-      },
-      "name": "Marks",
-      "order": [
-        "nt-mark.svg",
-        "nt-mark-mono.svg",
-        "nt-favicon.svg"
-      ],
-      "tile": "l"
+    "arrow-right.svg": {
+     "blob": "b1c19f5bc3a591b5bac99b4596a127a6",
+     "name": "arrow-right.svg",
+     "size": 341,
+     "type": "image/svg+xml"
+    },
+    "arrow-up.svg": {
+     "blob": "62fcc5022d8eb9296d19f5cda488f1b7",
+     "name": "arrow-up.svg",
+     "size": 335,
+     "type": "image/svg+xml"
+    },
+    "bolt.svg": {
+     "blob": "ac411dca4df5ed8fbf8d5e1ed3890eac",
+     "name": "bolt.svg",
+     "size": 274,
+     "type": "image/svg+xml"
+    },
+    "check.svg": {
+     "blob": "9b0ae85389e248cd817f4791b9848170",
+     "name": "check.svg",
+     "size": 298,
+     "type": "image/svg+xml"
+    },
+    "chevron-left.svg": {
+     "blob": "f8b53be39575d9ff50cb7b330ee5ac16",
+     "name": "chevron-left.svg",
+     "size": 318,
+     "type": "image/svg+xml"
+    },
+    "chevron-right.svg": {
+     "blob": "d7742c1511a0c9cfb12ac9c7899a1519",
+     "name": "chevron-right.svg",
+     "size": 321,
+     "type": "image/svg+xml"
+    },
+    "clock.svg": {
+     "blob": "c0d024a994bef6510f105728317fdfa1",
+     "name": "clock.svg",
+     "size": 690,
+     "type": "image/svg+xml"
+    },
+    "comment.svg": {
+     "blob": "4585c626485a8cc70b2e6b9c7fb83bc8",
+     "name": "comment.svg",
+     "size": 406,
+     "type": "image/svg+xml"
+    },
+    "cross.svg": {
+     "blob": "16b09c43764f724dc4506c169c6d50be",
+     "name": "cross.svg",
+     "size": 333,
+     "type": "image/svg+xml"
+    },
+    "download.svg": {
+     "blob": "a37d45ae41ec8d9a25544de1734b4501",
+     "name": "download.svg",
+     "size": 425,
+     "type": "image/svg+xml"
+    },
+    "external-link.svg": {
+     "blob": "a641bbf648ac1d71fc2238c4e438372a",
+     "name": "external-link.svg",
+     "size": 456,
+     "type": "image/svg+xml"
+    },
+    "eye.svg": {
+     "blob": "6aaf66bea480bac8fd55885941bb4717",
+     "name": "eye.svg",
+     "size": 1144,
+     "type": "image/svg+xml"
+    },
+    "file.svg": {
+     "blob": "829943efcec1e6a7c0d8b9035827428e",
+     "name": "file.svg",
+     "size": 271,
+     "type": "image/svg+xml"
+    },
+    "folder.svg": {
+     "blob": "85eb3c6e495b41daa2a16241a04b3b0e",
+     "name": "folder.svg",
+     "size": 406,
+     "type": "image/svg+xml"
+    },
+    "gear.svg": {
+     "blob": "58ece2395502176162a26bc2599cdc84",
+     "name": "gear.svg",
+     "size": 1651,
+     "type": "image/svg+xml"
+    },
+    "grid.svg": {
+     "blob": "c3d8cb967118c12aa1f414508b267d36",
+     "name": "grid.svg",
+     "size": 381,
+     "type": "image/svg+xml"
+    },
+    "help.svg": {
+     "blob": "b3c1074df906e2878abd1293efb81a89",
+     "name": "help.svg",
+     "size": 915,
+     "type": "image/svg+xml"
+    },
+    "home.svg": {
+     "blob": "987cfb57d38f4c53513fc05e6419b643",
+     "name": "home.svg",
+     "size": 292,
+     "type": "image/svg+xml"
+    },
+    "mail.svg": {
+     "blob": "aa1962ff1aba3ca191d93d4579deea1e",
+     "name": "mail.svg",
+     "size": 580,
+     "type": "image/svg+xml"
+    },
+    "plus.svg": {
+     "blob": "6f4365365be378dda3f40b605b03a035",
+     "name": "plus.svg",
+     "size": 267,
+     "type": "image/svg+xml"
+    },
+    "power.svg": {
+     "blob": "159e4e0661daed3a57edec85803a64d2",
+     "name": "power.svg",
+     "size": 697,
+     "type": "image/svg+xml"
+    },
+    "reload.svg": {
+     "blob": "4be6350e37879f7b133d39aa8a212bbd",
+     "name": "reload.svg",
+     "size": 580,
+     "type": "image/svg+xml"
+    },
+    "search.svg": {
+     "blob": "77525649322c66576bd8b8964830db60",
+     "name": "search.svg",
+     "size": 388,
+     "type": "image/svg+xml"
+    },
+    "star.svg": {
+     "blob": "6c413211041fa1c974e801a8caa2e9f6",
+     "name": "star.svg",
+     "size": 324,
+     "type": "image/svg+xml"
     }
+   },
+   "name": "Icons",
+   "order": [
+    "alert.svg",
+    "arrow-left.svg",
+    "arrow-right.svg",
+    "arrow-up.svg",
+    "bolt.svg",
+    "check.svg",
+    "chevron-left.svg",
+    "chevron-right.svg",
+    "clock.svg",
+    "comment.svg",
+    "cross.svg",
+    "download.svg",
+    "external-link.svg",
+    "eye.svg",
+    "file.svg",
+    "folder.svg",
+    "gear.svg",
+    "grid.svg",
+    "help.svg",
+    "home.svg",
+    "mail.svg",
+    "plus.svg",
+    "power.svg",
+    "reload.svg",
+    "search.svg",
+    "star.svg"
+   ],
+   "tile": "s"
   },
-  "blobs": {},
-  "createdOnFiles": {
-    "at": "2026-10-02T15:35:39Z",
-    "v": 1
-  },
-  "docs": {
-    "readme": "project/README.md",
-    "sections": []
-  },
-  "groups": [
-    "Marks",
-    "Icons",
-    "Giscus"
-  ],
-  "lastChange": {
-    "at": "2026-10-02T15:35:39Z",
-    "by": "Tommi Kärkäs",
-    "note": "Initial system: tokens, 12 blog components, 26 CC0 icons, giscus theme, cover.",
-    "via": "Cowork"
-  },
-  "layout": "files",
-  "libraries": [],
-  "namespace": "NeonTerminal",
-  "sections": {},
-  "title": "Neon Terminal"
+  "Marks": {
+   "files": {
+    "nt-favicon.svg": {
+     "blob": "49f18c96958c47415b3fee5d2517ce71",
+     "name": "nt-favicon.svg",
+     "size": 233,
+     "type": "image/svg+xml"
+    },
+    "nt-mark-mono.svg": {
+     "blob": "aba2a1e392ecdd2103a334251d689b0d",
+     "name": "nt-mark-mono.svg",
+     "size": 205,
+     "type": "image/svg+xml"
+    },
+    "nt-mark.svg": {
+     "blob": "31cb8267b929ca0d0be5bfe4689bd019",
+     "name": "nt-mark.svg",
+     "size": 232,
+     "type": "image/svg+xml"
+    },
+    "nt-rat.svg": {
+     "name": "nt-rat.svg",
+     "blob": "9a2cdeb56e0c0d19b121291a1642dc89",
+     "size": 564,
+     "type": "image/svg+xml"
+    },
+    "nt-rat-mono.svg": {
+     "name": "nt-rat-mono.svg",
+     "blob": "76af3eaa90ea5a37e77d62923fbedef9",
+     "size": 564,
+     "type": "image/svg+xml"
+    },
+    "nt-rat-favicon.svg": {
+     "name": "nt-rat-favicon.svg",
+     "blob": "d3f64a9ccbb880d2def541c2baf7d360",
+     "size": 562,
+     "type": "image/svg+xml"
+    }
+   },
+   "name": "Marks",
+   "order": [
+    "nt-rat.svg",
+    "nt-rat-mono.svg",
+    "nt-rat-favicon.svg",
+    "nt-mark.svg",
+    "nt-mark-mono.svg",
+    "nt-favicon.svg"
+   ],
+   "tile": "l"
+  }
+ },
+ "blobs": {},
+ "createdOnFiles": {
+  "at": "2026-10-02T15:35:39Z",
+  "v": 1
+ },
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "groups": [
+  "Marks",
+  "Icons",
+  "Giscus"
+ ],
+ "lastChange": {
+  "by": "Tommi Kärkäs",
+  "at": "2026-10-02T15:47:55Z",
+  "via": "Cowork",
+  "note": "Added the rat logo (original, CC0) and made it the primary mark."
+ },
+ "layout": "files",
+ "libraries": [],
+ "namespace": "NeonTerminal",
+ "sections": {},
+ "title": "Neon Terminal"
 }

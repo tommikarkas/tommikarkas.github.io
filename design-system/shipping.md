@@ -9,7 +9,7 @@ The system is two stylesheets and a folder of SVGs. Nothing needs compiling, so 
 | `tokens.css` (generated; the Tokens view downloads it) | `/assets/tokens.css` |
 | `components/bundle.css` | `/assets/blog.css` |
 | `assets/Icons/*.svg` | `/assets/icons/` |
-| `assets/Marks/nt-mark.svg`, `nt-favicon.svg` | `/assets/` |
+| `assets/Marks/nt-rat.svg`, `nt-rat-favicon.svg` (and `nt-mark.svg` if you use the secondary mark) | `/assets/` |
 | `assets/Giscus/giscus.css` | `/assets/giscus.css` |
 
 ## The `<head>`
@@ -19,7 +19,7 @@ The system is two stylesheets and a folder of SVGs. Nothing needs compiling, so 
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0b0d14">
-<link rel="icon" href="/assets/nt-favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/nt-rat-favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
