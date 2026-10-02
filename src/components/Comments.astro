@@ -50,9 +50,12 @@
 	});
 	observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
 
+	let hasSentInitialTheme = false;
 	window.addEventListener('message', (event) => {
 		if (event.origin !== 'https://giscus.app') return;
 		if (!(typeof event.data === 'object' && event.data?.giscus)) return;
+		if (hasSentInitialTheme) return;
+		hasSentInitialTheme = true;
 		sendGiscusTheme(currentGiscusTheme());
 	});
 </script>
