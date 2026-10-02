@@ -1,0 +1,58 @@
+<section class="giscus-comments" id="giscus-comments"></section>
+
+<style>
+	.giscus-comments {
+		width: 720px;
+		max-width: calc(100% - 2em);
+		margin: 2em auto 0;
+	}
+</style>
+
+<script>
+	function currentGiscusTheme(): string {
+		const root = document.documentElement;
+		const isDark =
+			root.getAttribute('data-theme') === 'dark' ||
+			(!root.getAttribute('data-theme') &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches);
+		return isDark ? 'dark' : 'light';
+	}
+
+	function sendGiscusTheme(theme: string) {
+		const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+		iframe?.contentWindow?.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
+	}
+
+	const container = document.getElementById('giscus-comments');
+	if (container) {
+		const script = document.createElement('script');
+		script.src = 'https://giscus.app/client.js';
+		script.setAttribute('data-repo', 'tommikarkas/tommikarkas.github.io');
+		script.setAttribute('data-repo-id', 'R_kgDOU470QA');
+		script.setAttribute('data-category', 'Announcements');
+		script.setAttribute('data-category-id', 'DIC_kwDOU470QM4DG492');
+		script.setAttribute('data-mapping', 'pathname');
+		script.setAttribute('data-strict', '1');
+		script.setAttribute('data-reactions-enabled', '1');
+		script.setAttribute('data-emit-metadata', '0');
+		script.setAttribute('data-input-position', 'bottom');
+		script.setAttribute('data-theme', currentGiscusTheme());
+		script.setAttribute('data-lang', 'en');
+		script.setAttribute('data-loading', 'lazy');
+		script.crossOrigin = 'anonymous';
+		script.async = true;
+		container.appendChild(script);
+	}
+
+	const root = document.documentElement;
+	const observer = new MutationObserver(() => {
+		sendGiscusTheme(currentGiscusTheme());
+	});
+	observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+
+	window.addEventListener('message', (event) => {
+		if (event.origin !== 'https://giscus.app') return;
+		if (!(typeof event.data === 'object' && event.data?.giscus)) return;
+		sendGiscusTheme(currentGiscusTheme());
+	});
+</script>
