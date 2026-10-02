@@ -1,0 +1,1 @@
+`giscus.css` is the theme file the giscus iframe loads (`data-theme="https://<your pages url>/assets/giscus.css"`). It maps giscus's custom properties onto this system's values as literal hex, because the iframe cannot read the page's variables. Regenerate it when `tokens.json` changes; the Comments section of the brand book lists the mapping.

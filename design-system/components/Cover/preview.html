@@ -1,0 +1,54 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Neon Terminal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=IBM+Plex+Sans:wght@400&display=swap">
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--bg-000); color: var(--ink-100); font-family: var(--font-sans); overflow: hidden; padding: 0; }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; }
+  .art { position: absolute; top: 0; left: 480px; width: 480px; height: 288px; overflow: hidden; }
+  .art svg { display: block; width: 480px; height: 288px; }
+  .cyan { fill: var(--cyan-500); }
+  .magenta { fill: var(--magenta-500); }
+  .amber { fill: var(--amber-500); }
+  .deep { fill: var(--bg-200); }
+  .dot { fill: var(--cyan-500); }
+  .blk { rx: var(--radius-0); }
+  .words { position: absolute; left: var(--space-6); bottom: var(--space-6); max-width: 440px; }
+  .name { margin: 0; font-family: var(--font-display); font-size: 88px; line-height: .95; font-weight: 700; letter-spacing: -0.01em; color: var(--ink-100); }
+  .name b { font-weight: inherit; color: var(--cyan-500); }
+  .tag { margin: var(--space-2) 0 0 2px; font-size: 14px; line-height: 20px; color: var(--ink-200); }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="art" aria-hidden="true">
+    <svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      cyan-500 112×248 bled off the top (the interaction colour, largest) · bg-200 336×216 bleeding off the right (the dark surface) · magenta-500 112×16 cursor bar under the slab (the mark's own shape) · amber-500 48×16 once (it only ever signals) — ≈34% of 960×288
+  arrangement one tall cyan slab with a dark slab beside it, bottoms on one line space-5 above the edge, space-4 gutters, the prompt-and-cursor of the mark at cover scale
+  pattern     dot grid, from "precise, technical, mono, a 4px grid": cyan-500 dots on the bg-200 slab at a space-7 pitch (28 units), the same grid .nt-grid-bg draws behind the header
+  scales      sides in space-4 multiples (112 = 7×16, 336 = 21×16, 216, 248); gutters space-4; pitch space-7; corners radius-0 (square system), amber bar space-4 tall
+-->
+      <rect class="cyan blk" x="16" y="-16" width="112" height="248"/>
+      <rect class="magenta blk" x="16" y="248" width="112" height="16"/>
+      <rect class="amber blk" x="144" y="16" width="48" height="16"/>
+      <rect class="deep blk" x="144" y="48" width="336" height="216"/>
+      <g class="dot">
+        <circle cx="168" cy="72" r="1.5"/><circle cx="216" cy="72" r="1.5"/><circle cx="264" cy="72" r="1.5"/><circle cx="312" cy="72" r="1.5"/><circle cx="360" cy="72" r="1.5"/><circle cx="408" cy="72" r="1.5"/><circle cx="456" cy="72" r="1.5"/>
+        <circle cx="168" cy="120" r="1.5"/><circle cx="216" cy="120" r="1.5"/><circle cx="264" cy="120" r="1.5"/><circle cx="312" cy="120" r="1.5"/><circle cx="360" cy="120" r="1.5"/><circle cx="408" cy="120" r="1.5"/><circle cx="456" cy="120" r="1.5"/>
+        <circle cx="168" cy="168" r="1.5"/><circle cx="216" cy="168" r="1.5"/><circle cx="264" cy="168" r="1.5"/><circle cx="312" cy="168" r="1.5"/><circle cx="360" cy="168" r="1.5"/><circle cx="408" cy="168" r="1.5"/><circle cx="456" cy="168" r="1.5"/>
+        <circle cx="168" cy="216" r="1.5"/><circle cx="216" cy="216" r="1.5"/><circle cx="264" cy="216" r="1.5"/><circle cx="312" cy="216" r="1.5"/><circle cx="360" cy="216" r="1.5"/><circle cx="408" cy="216" r="1.5"/><circle cx="456" cy="216" r="1.5"/>
+      </g>
+    </svg>
+  </div>
+  <div class="words">
+    <h1 class="name">Neon<br>Terminal</h1>
+    <p class="tag">An engineering blog you can read on a phone in the dark.</p>
+  </div>
+</div>
+</body>
+</html>

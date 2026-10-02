@@ -1,0 +1,30 @@
+<!-- @dsCard group="Article" height=980 width=400 -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Prose — preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>body{padding-block:var(--space-4);}</style>
+</head>
+<body>
+
+<article class="nt-prose nt-wrap">
+  <p>The symptom was precise: every open socket dropped <strong>61 seconds</strong> after the last message, on the office network only. Precise symptoms are gifts. They usually mean a <em>configured</em> number rather than a bug.</p>
+  <h2 id="what-the-proxy-does">What the proxy does</h2>
+  <p>Corporate proxies close idle tunnels. Ours has a 60-second idle timeout, which the <a href="https://www.rfc-editor.org/rfc/rfc6455">WebSocket spec</a> has nothing to say about. The client library's default ping interval is <code>0</code>, meaning never.</p>
+  <blockquote><p>If a connection can be idle, something in the path will decide it is dead.</p></blockquote>
+  <h3>Reproducing it locally</h3>
+  <ul>
+    <li>Run <code>mitmproxy</code> with <code>--set connection_strategy=lazy</code>.</li>
+    <li>Set its idle timeout to 10 s so the wait is short.</li>
+    <li>Open a socket and send nothing.</li>
+  </ul>
+  <div class="nt-table-wrap"><table>
+    <thead><tr><th>Interval</th><th>Drops / hour</th><th>Bytes / hour</th></tr></thead>
+    <tbody><tr><td><code>0</code> (never)</td><td>59</td><td>0</td></tr><tr><td><code>30 s</code></td><td>0</td><td>1 440</td></tr><tr><td><code>55 s</code></td><td>0</td><td>786</td></tr></tbody>
+  </table></div>
+  <hr>
+  <p>Setting the interval to 30 seconds fixed it. The remaining question, why 61 and not 60, is the proxy's own one-second grace period, documented nowhere I could find.</p>
+</article>
+
+</body>
+</html>

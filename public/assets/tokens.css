@@ -1,0 +1,66 @@
+/* Neon Terminal — generated tokens.
+   Source: design-system/project/tokens.json (v1, "dark" theme).
+   Load this before blog.css. */
+:root {
+  /* color: grounds */
+  --bg-000: #0b0d14;
+  --bg-100: #121622;
+  --bg-200: #1b2133;
+
+  /* color: borders */
+  --line-100: #262d40;
+  --line-200: #364060;
+
+  /* color: ink */
+  --ink-100: #e8ebf4;
+  --ink-200: #a4adc4;
+  --ink-300: #6e7892;
+
+  /* color: accents */
+  --cyan-500: #3ce0ff;
+  --magenta-500: #ff4fd2;
+
+  /* color: signals */
+  --amber-500: #ffcb47;
+  --red-500: #ff5c7a;
+  --green-500: #5ff2a8;
+
+  /* color: on-fill */
+  --on-accent: #06080f;
+
+  /* color: glows */
+  --cyan-glow: #3ce0ff2e;
+  --magenta-glow: #ff4fd22e;
+
+  /* color: aliases */
+  --link: var(--cyan-500);
+  --focus: var(--cyan-500);
+
+  /* type: families */
+  --font-display: "Chakra Petch", "IBM Plex Sans", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* spacing: 4px grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --measure: 42rem;
+  --measure-wide: 52rem;
+  --tap: 44px;
+
+  /* radius */
+  --radius-0: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* shadow */
+  --focus-ring: 0 0 0 2px var(--cyan-500), 0 0 12px 2px var(--cyan-glow);
+  --glow-cyan: 0 0 20px var(--cyan-glow);
+  --glow-magenta: 0 0 20px var(--magenta-glow);
+}

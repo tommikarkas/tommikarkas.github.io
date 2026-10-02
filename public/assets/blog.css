@@ -1,0 +1,274 @@
+/* Neon Terminal — blog stylesheet.
+   Depends on tokens.css (the compiled tokens: --bg-000, --ink-100, --cyan-500, --space-4,
+   --font-display/--font-sans/--font-mono, --focus-ring …). Load tokens.css first, then this.
+   Mobile first: every rule below is written for a 360–430px phone; the two media queries
+   widen it for tablets (768px) and desks (1024px). Classes are prefixed nt-. */
+
+/* ---------- base ---------- */
+html { background: var(--bg-000); color: var(--ink-100); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 17px; line-height: 28px;
+  background: var(--bg-000); color: var(--ink-100);
+  padding-inline: var(--space-4);
+  padding-block: 0 var(--space-8);
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--magenta-500); color: var(--on-accent); }
+:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
+img, video, svg { max-width: 100%; height: auto; }
+a { color: var(--cyan-500); text-decoration-color: color-mix(in srgb, var(--cyan-500) 45%, transparent); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--cyan-500); }
+
+.nt-wrap       { max-width: var(--measure);      margin-inline: auto; min-width: 0; }
+.nt-wrap-wide  { max-width: var(--measure-wide); margin-inline: auto; min-width: 0; }
+
+/* the prompt glyph: an eyebrow starts with "> " in cyan */
+.nt-eyebrow {
+  font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-200);
+  display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; min-width: 0;
+}
+.nt-eyebrow::before { content: ">"; color: var(--cyan-500); font-weight: 700; }
+.nt-eyebrow.nt-no-prompt::before { content: none; }
+
+/* a 4px-grid dot field for the header and the cover; ink-300 at low strength */
+.nt-grid-bg {
+  background-image: radial-gradient(circle, var(--ink-300) 1px, transparent 1.2px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+}
+
+/* ---------- SiteHeader ---------- */
+.nt-header {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--line-100);
+  margin-bottom: var(--space-8);
+}
+.nt-brand { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--tap); text-decoration: none; color: var(--ink-100); }
+.nt-brand img { width: 24px; height: 24px; display: block; }
+.nt-brand-name { font-family: var(--font-display); font-size: 20px; line-height: 24px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.nt-brand-name b { color: var(--cyan-500); font-weight: inherit; }
+.nt-nav { display: flex; flex-wrap: wrap; gap: 0 var(--space-2); margin: 0; padding: 0; list-style: none; }
+.nt-nav a {
+  display: inline-flex; align-items: center; min-height: var(--tap); padding-inline: var(--space-2);
+  font-family: var(--font-mono); font-size: 13px; line-height: 20px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-200); text-decoration: none; border-bottom: 2px solid transparent;
+}
+.nt-nav a:hover { color: var(--ink-100); }
+.nt-nav a[aria-current="page"] { color: var(--cyan-500); border-bottom-color: var(--cyan-500); box-shadow: var(--glow-cyan); }
+
+/* ---------- PostCard (list entry) ---------- */
+.nt-post-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-100); }
+.nt-post-card { border-bottom: 1px solid var(--line-100); }
+.nt-post-card a.nt-post-link {
+  display: grid; gap: var(--space-2);
+  padding-block: var(--space-5); padding-inline: 0;
+  color: inherit; text-decoration: none;
+}
+.nt-post-card a.nt-post-link:hover { background: var(--bg-100); margin-inline: calc(-1 * var(--space-4)); padding-inline: var(--space-4); }
+.nt-post-card h3 { margin: 0; font-family: var(--font-display); font-size: 21px; line-height: 28px; font-weight: 600; text-wrap: balance; }
+.nt-post-card a.nt-post-link:hover h3 { color: var(--cyan-500); }
+.nt-post-card p { margin: 0; color: var(--ink-200); font-size: 15px; line-height: 24px; }
+.nt-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+
+/* ---------- Tag ---------- */
+.nt-tag {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  font-family: var(--font-mono); font-size: 13px; line-height: 20px;
+  color: var(--magenta-500); text-decoration: none;
+  padding: 2px var(--space-2); border: 1px solid var(--line-200); border-radius: var(--radius-sm);
+  background: var(--bg-000);
+}
+.nt-tag::before { content: "#"; color: var(--ink-300); }
+a.nt-tag:hover { border-color: var(--magenta-500); box-shadow: var(--glow-magenta); }
+a.nt-tag[aria-current="true"] { background: var(--magenta-500); color: var(--on-accent); border-color: var(--magenta-500); }
+a.nt-tag[aria-current="true"]::before { color: var(--on-accent); }
+.nt-tag.nt-tap { min-height: var(--tap); padding-inline: var(--space-3); }
+
+/* ---------- Badge ---------- */
+.nt-badge {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 2px var(--space-2); border-radius: var(--radius-sm);
+  background: var(--amber-500); color: var(--on-accent);
+}
+.nt-badge.nt-cyan { background: var(--cyan-500); }
+.nt-badge img { width: 12px; height: 12px; filter: brightness(0); }
+
+/* ---------- PostHeader ---------- */
+.nt-post-header { display: grid; gap: var(--space-3); margin-bottom: var(--space-6); }
+.nt-post-header h1 {
+  margin: 0; font-family: var(--font-display); font-size: 34px; line-height: 40px; font-weight: 700; letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.nt-post-header h1::after {
+  content: ""; display: block; width: var(--space-8); height: 3px; margin-top: var(--space-3);
+  background: var(--magenta-500); box-shadow: var(--glow-magenta);
+}
+.nt-post-header .nt-lead { margin: 0; font-size: 20px; line-height: 30px; color: var(--ink-200); }
+
+/* ---------- Prose (article body) ---------- */
+.nt-prose { font-size: 17px; line-height: 28px; min-width: 0; }
+.nt-prose > * { margin-block: 0 var(--space-5); }
+.nt-prose > :last-child { margin-bottom: 0; }
+.nt-prose h2 {
+  font-family: var(--font-display); font-size: 26px; line-height: 32px; font-weight: 600;
+  margin-top: var(--space-7); text-wrap: balance; scroll-margin-top: var(--space-5);
+}
+.nt-prose h2::before { content: "// "; color: var(--magenta-500); font-weight: 600; }
+.nt-prose h3 { font-family: var(--font-display); font-size: 21px; line-height: 28px; font-weight: 600; margin-top: var(--space-6); text-wrap: balance; }
+.nt-prose a { color: var(--link); }
+.nt-prose a[href^="http"]::after {
+  content: ""; display: inline-block; width: 0.7em; height: 0.7em; margin-left: 0.2em; vertical-align: baseline;
+  background: var(--cyan-500);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><path d='M60 0h60v60h-17V29L58 74 46 62l45-45H60zM3 17h40v17H20v62h66V76h17v37H3z'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><path d='M60 0h60v60h-17V29L58 74 46 62l45-45H60zM3 17h40v17H20v62h66V76h17v37H3z'/></svg>") center / contain no-repeat;
+}
+.nt-prose ul, .nt-prose ol { padding-left: var(--space-5); }
+.nt-prose li { margin-bottom: var(--space-2); }
+.nt-prose li::marker { color: var(--cyan-500); font-family: var(--font-mono); }
+.nt-prose blockquote {
+  margin-inline: 0; padding: var(--space-3) var(--space-4);
+  border-left: 2px solid var(--magenta-500); color: var(--ink-200); background: var(--bg-100);
+}
+.nt-prose blockquote p { margin: 0; }
+.nt-prose hr { border: 0; border-top: 1px solid var(--line-100); margin-block: var(--space-7); }
+.nt-prose hr::after { content: "> _"; display: block; width: max-content; margin: -11px auto 0; padding-inline: var(--space-2); background: var(--bg-000); font-family: var(--font-mono); font-size: 13px; color: var(--ink-300); }
+.nt-prose img { display: block; border: 1px solid var(--line-100); }
+.nt-prose figure { margin-inline: 0; }
+.nt-prose figcaption { font-size: 13px; line-height: 20px; color: var(--ink-200); margin-top: var(--space-2); }
+.nt-prose code { font-family: var(--font-mono); font-size: 0.88em; color: var(--cyan-500); background: var(--bg-100); padding: 1px 5px; border-radius: var(--radius-sm); }
+.nt-prose pre code { font-size: inherit; color: inherit; background: none; padding: 0; }
+.nt-prose strong { color: var(--ink-100); font-weight: 600; }
+.nt-prose kbd { font-family: var(--font-mono); font-size: 0.85em; border: 1px solid var(--line-200); border-bottom-width: 2px; padding: 0 5px; border-radius: var(--radius-sm); }
+
+/* tables scroll inside their own box; the page never scrolls sideways */
+.nt-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line-100); }
+.nt-prose table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 24px; font-variant-numeric: tabular-nums; }
+.nt-prose th, .nt-prose td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--line-100); white-space: nowrap; }
+.nt-prose th { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-200); background: var(--bg-200); }
+.nt-prose td code { font-size: 14px; }
+
+/* ---------- CodeBlock ---------- */
+.nt-code { background: var(--bg-100); border: 1px solid var(--line-100); min-width: 0; }
+.nt-code[data-lang]::before {
+  content: attr(data-lang); display: block;
+  font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-200); background: var(--bg-200); padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--line-100);
+}
+.nt-code pre {
+  margin: 0; padding: var(--space-4); overflow-x: auto; -webkit-overflow-scrolling: touch;
+  font-family: var(--font-mono); font-size: 15px; line-height: 26px; tab-size: 2;
+}
+.nt-code .nt-ln { display: inline-block; width: 2ch; margin-right: var(--space-4); text-align: right; color: var(--ink-300); user-select: none; }
+.nt-code .nt-add { color: var(--green-500); }
+.nt-code .nt-del { color: var(--red-500); }
+.nt-code .nt-hl  { background: var(--bg-200); display: inline-block; width: 100%; }
+/* tokens for a highlighter (map Prism/Shiki classes onto these) */
+.nt-code .tok-kw { color: var(--magenta-500); }
+.nt-code .tok-str { color: var(--green-500); }
+.nt-code .tok-fn { color: var(--cyan-500); }
+.nt-code .tok-num { color: var(--amber-500); }
+.nt-code .tok-cm { color: var(--ink-300); font-style: italic; }
+.nt-prose .nt-code { margin-inline: calc(-1 * var(--space-4)); border-inline: 0; }
+
+/* ---------- Callout ---------- */
+.nt-callout {
+  display: grid; gap: var(--space-2);
+  padding: var(--space-4); border: 1px solid var(--line-200); border-radius: var(--radius-md);
+  background: var(--bg-100); font-size: 15px; line-height: 24px;
+}
+.nt-callout > .nt-eyebrow { color: var(--cyan-500); }
+.nt-callout > .nt-eyebrow::before { content: none; }
+.nt-callout > .nt-eyebrow img { width: 16px; height: 16px; }
+.nt-callout p { margin: 0; }
+.nt-callout.nt-warn  { border-color: var(--amber-500); }
+.nt-callout.nt-warn  > .nt-eyebrow { color: var(--amber-500); }
+.nt-callout.nt-danger { border-color: var(--red-500); }
+.nt-callout.nt-danger > .nt-eyebrow { color: var(--red-500); }
+
+/* ---------- Button ---------- */
+.nt-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: var(--tap); padding: var(--space-3) var(--space-5);
+  font-family: var(--font-mono); font-size: 13px; line-height: 20px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--cyan-500); color: var(--on-accent); border: 1px solid var(--cyan-500); border-radius: var(--radius-0);
+  text-decoration: none; cursor: pointer;
+}
+.nt-btn:hover { box-shadow: var(--glow-cyan); }
+.nt-btn img { width: 16px; height: 16px; filter: brightness(0); }
+.nt-btn.nt-ghost { background: transparent; color: var(--cyan-500); }
+.nt-btn.nt-ghost img { filter: none; }
+.nt-btn:disabled { background: var(--bg-200); color: var(--ink-300); border-color: var(--line-200); cursor: not-allowed; box-shadow: none; }
+
+/* ---------- PostNav (previous / next) ---------- */
+.nt-postnav { display: grid; gap: var(--space-4); margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--line-100); }
+.nt-postnav a {
+  display: grid; gap: var(--space-1); padding: var(--space-4); min-height: var(--tap);
+  border: 1px solid var(--line-100); color: inherit; text-decoration: none;
+}
+.nt-postnav a:hover { border-color: var(--cyan-500); background: var(--bg-100); }
+.nt-postnav a:hover strong { color: var(--cyan-500); }
+.nt-postnav strong { font-family: var(--font-display); font-size: 17px; line-height: 24px; font-weight: 600; text-wrap: balance; }
+.nt-postnav .nt-next { text-align: right; }
+.nt-postnav .nt-next .nt-eyebrow { justify-content: flex-end; }
+.nt-postnav .nt-next .nt-eyebrow::before { content: none; }
+.nt-postnav .nt-next .nt-eyebrow::after { content: ">"; color: var(--cyan-500); font-weight: 700; }
+
+/* ---------- Comments (giscus) ---------- */
+.nt-comments {
+  margin-top: var(--space-7); padding: var(--space-5) var(--space-4);
+  border: 1px solid var(--line-200); border-radius: var(--radius-md); background: var(--bg-100);
+  display: grid; gap: var(--space-3); min-width: 0;
+}
+.nt-comments h2 { margin: 0; font-family: var(--font-display); font-size: 21px; line-height: 28px; font-weight: 600; display: flex; align-items: center; gap: var(--space-2); }
+.nt-comments h2 img { width: 20px; height: 20px; }
+.nt-comments .nt-comments-note { margin: 0; font-size: 15px; line-height: 24px; color: var(--ink-200); }
+.nt-comments .giscus { min-height: 180px; }
+.nt-comments .giscus:empty::before {
+  content: "> loading comments_"; display: block; padding-top: var(--space-5);
+  font-family: var(--font-mono); font-size: 13px; color: var(--ink-300);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nt-comments .giscus:empty::before { animation: nt-blink 1.1s steps(1) infinite; }
+}
+@keyframes nt-blink { 50% { color: var(--cyan-500); } }
+.nt-comments iframe.giscus-frame { width: 100%; border: 0; color-scheme: dark; }
+
+/* ---------- Footer ---------- */
+.nt-footer {
+  margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid var(--line-100);
+  display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); align-items: center; justify-content: space-between;
+  font-size: 15px; line-height: 24px; color: var(--ink-200);
+}
+.nt-footer p { margin: 0; }
+.nt-footer ul { display: flex; flex-wrap: wrap; gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
+.nt-footer a { display: inline-flex; align-items: center; gap: var(--space-1); min-height: var(--tap); font-family: var(--font-mono); font-size: 13px; text-decoration: none; }
+.nt-footer a img { width: 14px; height: 14px; }
+.nt-footer a:hover { text-decoration: underline; }
+
+/* ---------- tablet: 768px ---------- */
+@media (min-width: 768px) {
+  body { padding-inline: var(--space-6); font-size: 18px; line-height: 30px; }
+  .nt-prose { font-size: 18px; line-height: 30px; }
+  .nt-post-header h1 { font-size: 42px; line-height: 48px; }
+  .nt-prose .nt-code { margin-inline: 0; border-inline: 1px solid var(--line-100); }
+  .nt-postnav { grid-template-columns: 1fr 1fr; }
+  .nt-comments { padding: var(--space-6); }
+  .nt-post-card a.nt-post-link { grid-template-columns: 7.5rem 1fr; grid-auto-flow: dense; }
+  .nt-post-card a.nt-post-link > .nt-eyebrow { grid-row: 1 / span 3; display: block; line-height: 20px; padding-top: 4px; }
+  .nt-post-card a.nt-post-link > .nt-eyebrow::before { margin-right: var(--space-2); }
+}
+/* ---------- desk: 1024px ---------- */
+@media (min-width: 1024px) {
+  .nt-prose .nt-code, .nt-prose .nt-table-wrap, .nt-prose figure { width: var(--measure-wide); margin-inline: calc((var(--measure) - var(--measure-wide)) / 2); max-width: calc(100vw - 2 * var(--space-6)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

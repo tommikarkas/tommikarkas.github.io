@@ -1,0 +1,22 @@
+<!-- @dsCard group="Article" height=330 width=400 -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CodeBlock — preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>body{padding-block:var(--space-4);}</style>
+</head>
+<body>
+
+<div class="nt-wrap">
+<div class="nt-code" data-lang="rust">
+<pre><code><span class="nt-ln">1</span><span class="tok-kw">let</span> socket = Client::builder()
+<span class="nt-ln">2</span>    .url(<span class="tok-str">"wss://api.example.dev/v1"</span>)
+<span class="nt-ln">3</span><span class="nt-del">-   .ping_interval(<span class="tok-kw">None</span>)</span>
+<span class="nt-ln">4</span><span class="nt-add">+   .ping_interval(<span class="tok-kw">Some</span>(Duration::from_secs(<span class="tok-num">30</span>)))</span>
+<span class="nt-ln">5</span>    .<span class="tok-fn">connect</span>()
+<span class="nt-ln">6</span>    .<span class="tok-fn">await</span>?; <span class="tok-cm">// proxy idles at 60 s</span></code></pre>
+</div>
+</div>
+
+</body>
+</html>

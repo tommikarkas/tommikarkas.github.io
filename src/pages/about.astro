@@ -4,6 +4,12 @@ import Layout from '../layouts/BlogPost.astro';
 const today = new Date();
 ---
 
-<Layout title="About" description="About this blog." pubDate={today}>
+<Layout
+	title="About"
+	description="About this blog."
+	pubDate={today}
+	tags={[]}
+	isPost={false}
+>
 	<p>This is a personal engineering blog. More about me coming soon.</p>
 </Layout>

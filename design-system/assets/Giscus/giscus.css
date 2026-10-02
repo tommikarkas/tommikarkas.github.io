@@ -1,0 +1,104 @@
+/* Neon Terminal — giscus theme. Loaded inside the giscus iframe via data-theme="https://…/assets/giscus.css".
+   Values are literal because the iframe cannot read the page's tokens.css:
+   bg-000 #0b0d14 · bg-100 #121622 · bg-200 #1b2133 · line-100 #262d40 · line-200 #364060
+   ink-100 #e8ebf4 · ink-200 #a4adc4 · ink-300 #6e7892 · cyan-500 #3ce0ff · magenta-500 #ff4fd2
+   amber-500 #ffcb47 · red-500 #ff5c7a · green-500 #5ff2a8 · on-accent #06080f */
+main {
+  --color-prettylights-syntax-comment: #6e7892;
+  --color-prettylights-syntax-constant: #ffcb47;
+  --color-prettylights-syntax-entity: #3ce0ff;
+  --color-prettylights-syntax-storage-modifier-import: #e8ebf4;
+  --color-prettylights-syntax-entity-tag: #5ff2a8;
+  --color-prettylights-syntax-keyword: #ff4fd2;
+  --color-prettylights-syntax-string: #5ff2a8;
+  --color-prettylights-syntax-variable: #ffcb47;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #ff5c7a;
+  --color-prettylights-syntax-invalid-illegal-text: #06080f;
+  --color-prettylights-syntax-invalid-illegal-bg: #ff5c7a;
+  --color-prettylights-syntax-carriage-return-text: #06080f;
+  --color-prettylights-syntax-carriage-return-bg: #ff5c7a;
+  --color-prettylights-syntax-string-regexp: #5ff2a8;
+  --color-prettylights-syntax-markup-list: #ffcb47;
+  --color-prettylights-syntax-markup-heading: #3ce0ff;
+  --color-prettylights-syntax-markup-italic: #e8ebf4;
+  --color-prettylights-syntax-markup-bold: #e8ebf4;
+  --color-prettylights-syntax-markup-deleted-text: #ff5c7a;
+  --color-prettylights-syntax-markup-deleted-bg: #1b2133;
+  --color-prettylights-syntax-markup-inserted-text: #5ff2a8;
+  --color-prettylights-syntax-markup-inserted-bg: #1b2133;
+  --color-prettylights-syntax-markup-changed-text: #ffcb47;
+  --color-prettylights-syntax-markup-changed-bg: #1b2133;
+  --color-prettylights-syntax-markup-ignored-text: #a4adc4;
+  --color-prettylights-syntax-markup-ignored-bg: #1b2133;
+  --color-prettylights-syntax-meta-diff-range: #ff4fd2;
+  --color-prettylights-syntax-brackethighlighter-angle: #a4adc4;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #6e7892;
+  --color-prettylights-syntax-constant-other-reference-link: #5ff2a8;
+
+  --color-btn-text: #e8ebf4;
+  --color-btn-bg: #121622;
+  --color-btn-border: #364060;
+  --color-btn-shadow: none;
+  --color-btn-inset-shadow: none;
+  --color-btn-hover-bg: #1b2133;
+  --color-btn-hover-border: #3ce0ff;
+  --color-btn-active-bg: #1b2133;
+  --color-btn-active-border: #3ce0ff;
+  --color-btn-selected-bg: #1b2133;
+  --color-btn-primary-text: #06080f;
+  --color-btn-primary-bg: #3ce0ff;
+  --color-btn-primary-border: #3ce0ff;
+  --color-btn-primary-shadow: 0 0 20px #3ce0ff2e;
+  --color-btn-primary-inset-shadow: none;
+  --color-btn-primary-hover-bg: #3ce0ff;
+  --color-btn-primary-hover-border: #3ce0ff;
+  --color-btn-primary-selected-bg: #3ce0ff;
+  --color-btn-primary-selected-shadow: none;
+  --color-btn-primary-disabled-text: #6e7892;
+  --color-btn-primary-disabled-bg: #1b2133;
+  --color-btn-primary-disabled-border: #364060;
+
+  --color-action-list-item-default-hover-bg: #1b2133;
+  --color-segmented-control-bg: #121622;
+  --color-segmented-control-button-bg: #1b2133;
+  --color-segmented-control-button-selected-border: #364060;
+
+  --color-fg-default: #e8ebf4;
+  --color-fg-muted: #a4adc4;
+  --color-fg-subtle: #6e7892;
+  --color-canvas-default: #0b0d14;
+  --color-canvas-overlay: #121622;
+  --color-canvas-inset: #0b0d14;
+  --color-canvas-subtle: #121622;
+  --color-border-default: #364060;
+  --color-border-muted: #262d40;
+  --color-neutral-muted: #1b2133;
+  --color-accent-fg: #3ce0ff;
+  --color-accent-emphasis: #3ce0ff;
+  --color-accent-muted: #3ce0ff2e;
+  --color-accent-subtle: #121622;
+  --color-success-fg: #5ff2a8;
+  --color-attention-fg: #ffcb47;
+  --color-attention-muted: #ffcb472e;
+  --color-attention-subtle: #121622;
+  --color-danger-fg: #ff5c7a;
+  --color-danger-muted: #ff5c7a2e;
+  --color-danger-subtle: #121622;
+  --color-primer-shadow-inset: none;
+  --color-scale-gray-7: #1b2133;
+  --color-scale-blue-8: #121622;
+
+  /* giscus-specific */
+  --color-social-reaction-bg-hover: #1b2133;
+  --color-social-reaction-bg-reacted-hover: #1b2133;
+
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+}
+main .markdown code, main .markdown pre, main textarea { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; }
+main .gsc-comment-box-textarea, main .gsc-comment-box-write { border-radius: 0; }
+main .gsc-comment, main .gsc-comment-box, main .gsc-reply-box { border-radius: 4px; }
+main .btn-primary, main .btn { border-radius: 0; font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+main .color-text-link, main a { color: #3ce0ff; }
+main .gsc-comment-author-avatar img { border-radius: 2px; }

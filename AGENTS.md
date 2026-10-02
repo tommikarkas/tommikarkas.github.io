@@ -1,3 +1,22 @@
+## Design system
+
+This site is built on the "Neon Terminal" design system. Any UI work (markup, CSS, new
+pages or components) must follow `design-system/README.md` and each component's
+`design-system/components/<Name>/README.md`, using only the system's tokens
+(`design-system/tokens.json`), components and icons (`design-system/assets/Icons/`) —
+never hand-drawn colors, spacing or icons. If the design itself needs to change, change
+`design-system/` first, then update the site to match.
+
+## Where things live
+
+- `design-system/` — the Neon Terminal design system source (tokens, component docs/previews, icons, marks, giscus theme). Read-only reference; the site's own copies below are generated/shipped from it.
+- `public/assets/` — the compiled `tokens.css` and `blog.css` stylesheets, icons, marks and the giscus theme file, shipped as static files.
+- `src/components/` — `Header.astro` (SiteHeader), `Footer.astro`, `Comments.astro`, `PostList.astro` (PostCard list).
+- `src/layouts/BlogPost.astro` — the post/page shell (SiteHeader, PostHeader, Prose, PostNav, Comments, Footer).
+- `src/pages/` — routes: `index.astro`, `blog/index.astro`, `blog/[...slug].astro`, `tags/index.astro`, `tags/[tag].astro`, `about.astro`, `rss.xml.js`.
+- `src/content/blog/` — post Markdown content.
+- `src/shiki/`, `src/plugins/` — the custom Shiki theme and rehype plugin that map code blocks onto the CodeBlock component.
+
 ## Development
 
 When starting the dev server, use background mode:
