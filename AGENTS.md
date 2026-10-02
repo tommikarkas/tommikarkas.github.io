@@ -17,6 +17,14 @@ was flagged by design review and accepted as-is (captain's decision,
 design system owner will revise the orientation rule or the artwork upstream
 later. Any *other* orientation/placement issue is still a real finding.
 
+**Known, accepted deviation:** `design-system/comments.md` specifies a
+Discussions category named **Comments** (type: Announcement). The site
+instead uses the repo's existing **General** category
+(`data-category="General"`, `data-category-id="DIC_kwDOU470QM4DG493"` in
+`src/components/Comments.astro`), the captain's choice. Don't re-flag the
+category name/id as a mismatch; a future category change is a captain's-hand
+change to `Comments.astro`, not a template bug.
+
 ## Design review enforcement
 
 Before finishing any change that touches UI or content — anything under

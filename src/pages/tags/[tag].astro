@@ -11,12 +11,12 @@ export async function getStaticPaths() {
 	const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
 	return tags.map((tag) => ({
 		params: { tag },
-		props: { posts: posts.filter((post) => post.data.tags.includes(tag)) },
+		props: { posts: posts.filter((post) => post.data.tags.includes(tag)), allTags: tags.sort() },
 	}));
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { posts, allTags } = Astro.props;
 const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
@@ -27,9 +27,24 @@ const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.va
 	</head>
 	<body>
 		<Header />
-		<main>
-			<header class="nt-post-header nt-wrap">
+		<main class="nt-wrap">
+			<header class="nt-post-header">
 				<h1>Posts tagged &ldquo;{tag}&rdquo;</h1>
+				<ul class="nt-tags">
+					{
+						allTags.map((t) => (
+							<li>
+								<a
+									class="nt-tag nt-tap"
+									href={`/tags/${t}/`}
+									aria-current={t === tag ? 'true' : undefined}
+								>
+									{t}
+								</a>
+							</li>
+						))
+					}
+				</ul>
 			</header>
 			<PostList posts={sorted} />
 		</main>

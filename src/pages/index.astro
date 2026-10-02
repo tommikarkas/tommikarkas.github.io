@@ -18,7 +18,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main class="nt-wrap">
 			{
 				posts.length > 0 ? (
 					<PostList posts={posts} />
