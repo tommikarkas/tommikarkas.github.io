@@ -28,8 +28,8 @@ Frontmatter fields:
 - `draft` — defaults to `false`. Set to `true` while writing; draft posts are excluded from
   the blog index, RSS feed, sitemap, and the production build, but are visible in `npm run dev`.
 
-Code blocks are syntax-highlighted via Astro's built-in Shiki, with separate light/dark themes
-that follow the site's theme toggle.
+Code blocks are syntax-highlighted via a custom Neon Terminal Shiki theme (`src/shiki/`),
+wrapped by a rehype plugin (`src/plugins/rehype-nt-code.mjs`).
 
 ## Running locally
 
@@ -49,7 +49,16 @@ To enable it on a fresh repo: **Settings → Pages → Source: GitHub Actions**.
 configuration is needed — the workflow already requests the `pages: write` / `id-token: write`
 permissions GitHub Pages deployment needs.
 
+## Comments
+
+Post comments are powered by [giscus](https://giscus.app/) backed by GitHub Discussions.
+Comments are configured in `src/components/Comments.astro` and styled with `public/assets/giscus.css`.
+
+## Design and UI
+
+The site uses the "Neon Terminal" design system. For design rules, tokens, and component
+documentation, see `design-system/` and the UI guidelines in `AGENTS.md`.
+
 ## Possible later additions
 
-- Comments via [giscus](https://giscus.app/) (GitHub Discussions-backed, no server needed).
 - Analytics — none configured yet, add only if/when wanted.
