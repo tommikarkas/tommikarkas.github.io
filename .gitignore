@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local record of the last recorded design review (see .claude/hooks/check-design-review.sh)
+.claude/.design-review-marker
