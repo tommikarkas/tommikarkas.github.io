@@ -28,6 +28,25 @@ Frontmatter fields:
 - `draft` — defaults to `false`. Set to `true` while writing; draft posts are excluded from
   the blog index, RSS feed, sitemap, and the production build, but are visible in `npm run dev`.
 
+### Local post editor
+
+Instead of writing the file by hand, you can use the local editor:
+
+```sh
+npm run editor    # http://localhost:4322
+```
+
+It lists the posts in `src/content/blog/` (title, date, draft state, file name), opens one to
+edit, or starts a new one, with a field for each front matter key and a Markdown body. Save
+writes the `.md` file into `src/content/blog/`; a new post never overwrites an existing file,
+and its file name must be lowercase letters, digits and hyphens. Fields are checked against
+the content schema before saving, and `npm run build` is the final check.
+
+The editor only writes files: review the change with `git diff`, then commit and push it
+yourself. It listens on `127.0.0.1` only (set `POST_EDITOR_PORT` to change the port), needs
+no extra dependencies, and lives in `tools/post-editor/`, outside what Astro builds, so it is
+never part of the published site.
+
 Code blocks are syntax-highlighted via a custom Neon Terminal Shiki theme (`src/shiki/`),
 wrapped by a rehype plugin (`src/plugins/rehype-nt-code.mjs`).
 

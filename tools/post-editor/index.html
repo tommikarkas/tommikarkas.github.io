@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="color-scheme" content="dark" />
+		<meta name="theme-color" content="#0b0d14" />
+		<meta name="robots" content="noindex" />
+		<title>Post editor</title>
+		<link rel="icon" href="/assets/nt-rat-favicon.svg" type="image/svg+xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap"
+		/>
+		<link rel="stylesheet" href="/assets/tokens.css" />
+		<link rel="stylesheet" href="/assets/blog.css" />
+		<link rel="stylesheet" href="/editor.css" />
+		<script type="module" src="/editor.js"></script>
+	</head>
+	<body>
+		<header class="nt-header nt-wrap-wide">
+			<a class="nt-brand" href="#/">
+				<img src="/assets/nt-rat.svg" width="24" height="24" alt="" />
+				<span class="nt-brand-name">Post<b>editor</b></span>
+			</a>
+			<nav aria-label="Editor">
+				<ul class="nt-nav">
+					<li><a href="#/" data-nav="list">Posts</a></li>
+					<li><a href="#/new" data-nav="new">New post</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="nt-wrap-wide" id="main">
+			<section id="view-list" hidden>
+				<header class="nt-post-header">
+					<p class="nt-eyebrow">src/content/blog</p>
+					<h1>Posts</h1>
+					<p class="nt-lead">
+						Pick a post to edit, or start a new one. Saving writes the Markdown file; review it
+						with git and commit it yourself.
+					</p>
+				</header>
+				<div id="list-status"></div>
+				<ul class="nt-post-list" id="post-list"></ul>
+			</section>
+
+			<section id="view-edit" hidden>
+				<header class="nt-post-header">
+					<p class="nt-eyebrow" id="edit-eyebrow"></p>
+					<h1 id="edit-heading"></h1>
+				</header>
+
+				<form id="post-form" class="ed-form" novalidate>
+					<div class="ed-field" id="slug-field">
+						<label class="nt-eyebrow nt-no-prompt" for="f-slug">File name</label>
+						<div class="ed-slug">
+							<span class="ed-affix">src/content/blog/</span>
+							<input id="f-slug" name="slug" required pattern="[a-z0-9]+(-[a-z0-9]+)*" autocomplete="off" spellcheck="false" />
+							<span class="ed-affix">.md</span>
+						</div>
+						<p class="ed-hint">Lowercase letters, digits and single hyphens. It becomes the post's URL.</p>
+					</div>
+
+					<div class="ed-field">
+						<label class="nt-eyebrow nt-no-prompt" for="f-title">Title</label>
+						<input id="f-title" name="title" required />
+						<p class="ed-hint">A sentence in sentence case, under 70 characters.</p>
+					</div>
+
+					<div class="ed-field">
+						<label class="nt-eyebrow nt-no-prompt" for="f-description">Description</label>
+						<textarea id="f-description" name="description" rows="2" required></textarea>
+						<p class="ed-hint">One hand-written sentence, shown in the post list and under the title.</p>
+					</div>
+
+					<div class="ed-row">
+						<div class="ed-field">
+							<label class="nt-eyebrow nt-no-prompt" for="f-pubDate">Publish date</label>
+							<input id="f-pubDate" name="pubDate" required placeholder="YYYY-MM-DD" inputmode="numeric" />
+						</div>
+						<div class="ed-field">
+							<label class="nt-eyebrow nt-no-prompt" for="f-updatedDate">Updated date</label>
+							<input id="f-updatedDate" name="updatedDate" placeholder="optional" inputmode="numeric" />
+						</div>
+					</div>
+
+					<div class="ed-field">
+						<label class="nt-eyebrow nt-no-prompt" for="f-tags">Tags</label>
+						<input id="f-tags" name="tags" placeholder="astro, notes" autocomplete="off" spellcheck="false" />
+						<p class="ed-hint">Comma-separated, lowercase, one word or a hyphenated pair.</p>
+					</div>
+
+					<div class="ed-field">
+						<label class="nt-eyebrow nt-no-prompt" for="f-heroImage">Hero image</label>
+						<input id="f-heroImage" name="heroImage" placeholder="optional, e.g. ../../assets/cover.jpg" spellcheck="false" />
+						<p class="ed-hint">Path relative to the post file. The image must already exist.</p>
+					</div>
+
+					<label class="ed-check">
+						<input type="checkbox" id="f-draft" name="draft" />
+						<span>Draft: shown in <code>npm run dev</code>, left out of the live site</span>
+					</label>
+
+					<div class="ed-field">
+						<label class="nt-eyebrow nt-no-prompt" for="f-body">Body (Markdown)</label>
+						<textarea id="f-body" name="body" class="ed-body" rows="24" spellcheck="true"></textarea>
+					</div>
+
+					<div id="edit-status" aria-live="polite"></div>
+
+					<div class="ed-actions">
+						<button type="submit" class="nt-btn" id="save-btn">
+							<img src="/assets/icons/download.svg" width="16" height="16" alt="" /> Save
+						</button>
+						<a class="nt-btn nt-ghost" href="#/">
+							<img src="/assets/icons/arrow-left.svg" width="16" height="16" alt="" /> Back
+						</a>
+					</div>
+				</form>
+			</section>
+		</main>
+
+		<footer class="nt-footer nt-wrap-wide">
+			<p>Local tool. It writes files only; it never commits or pushes.</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+/* Post editor form controls. The design system has no form component, so these
+   use only its tokens: square corners, line-200 hairlines on a bg-100 field,
+   the focus-ring glow, mono for anything you type that is code-like. */
+
+.ed-form { display: grid; gap: var(--space-5); }
+.ed-row { display: grid; gap: var(--space-5); }
+@media (min-width: 480px) {
+  .ed-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+.ed-field { display: grid; gap: var(--space-2); min-width: 0; }
+.ed-hint { margin: 0; font-size: 13px; line-height: 20px; color: var(--ink-200); }
+
+.ed-form input:not([type="checkbox"]),
+.ed-form textarea {
+  width: 100%; min-width: 0; min-height: var(--tap);
+  padding: var(--space-2) var(--space-3);
+  font: inherit; font-size: 17px; line-height: 28px; color: var(--ink-100);
+  background: var(--bg-100); border: 1px solid var(--line-200); border-radius: var(--radius-0);
+}
+.ed-form input::placeholder,
+.ed-form textarea::placeholder { color: var(--ink-300); }
+.ed-form input:focus-visible,
+.ed-form textarea:focus-visible { outline: none; border-color: var(--focus); box-shadow: var(--focus-ring); }
+.ed-form input[aria-invalid="true"] { border-color: var(--red-500); }
+
+#f-slug, #f-pubDate, #f-updatedDate, #f-tags, #f-heroImage, .ed-body { font-family: var(--font-mono); font-size: 15px; }
+.ed-body { line-height: 26px; resize: vertical; tab-size: 2; }
+
+.ed-slug {
+  display: flex; align-items: stretch; min-width: 0;
+  border: 1px solid var(--line-200); background: var(--bg-100);
+}
+.ed-slug:focus-within { border-color: var(--focus); box-shadow: var(--focus-ring); }
+.ed-slug input { border: 0 !important; box-shadow: none !important; flex: 1 1 auto; }
+.ed-affix {
+  display: flex; align-items: center; padding-inline: var(--space-2);
+  font-family: var(--font-mono); font-size: 13px; color: var(--ink-200); white-space: nowrap;
+}
+.ed-affix:first-child { display: none; }
+@media (min-width: 480px) { .ed-affix:first-child { display: flex; } }
+
+.ed-check { display: flex; align-items: center; gap: var(--space-3); min-height: var(--tap); cursor: pointer; }
+.ed-check input { width: 20px; height: 20px; margin: 0; accent-color: var(--cyan-500); flex: none; }
+.ed-check code { font-family: var(--font-mono); font-size: 0.88em; color: var(--cyan-500); }
+
+.ed-actions { display: grid; gap: var(--space-3); }
+@media (min-width: 480px) { .ed-actions { display: flex; } }
+
+#list-status:not(:empty), #edit-status:not(:empty) { margin-bottom: var(--space-5); }
+.nt-post-card .ed-file { font-family: var(--font-mono); font-size: 13px; line-height: 20px; color: var(--ink-200); margin: 0; }
+.nt-post-card h3 .nt-badge { vertical-align: middle; margin-left: var(--space-2); }
+.ed-empty { color: var(--ink-200); }
