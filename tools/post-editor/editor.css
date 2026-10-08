@@ -22,7 +22,6 @@
 .ed-form textarea::placeholder { color: var(--ink-300); }
 .ed-form input:focus-visible,
 .ed-form textarea:focus-visible { outline: none; border-color: var(--focus); box-shadow: var(--focus-ring); }
-.ed-form input[aria-invalid="true"] { border-color: var(--red-500); }
 
 #f-slug, #f-pubDate, #f-updatedDate, #f-tags, #f-heroImage, .ed-body { font-family: var(--font-mono); font-size: 15px; }
 .ed-body { line-height: 26px; resize: vertical; tab-size: 2; }
@@ -48,6 +47,13 @@
 @media (min-width: 480px) { .ed-actions { display: flex; } }
 
 #list-status:not(:empty), #edit-status:not(:empty) { margin-bottom: var(--space-5); }
-.nt-post-card .ed-file { font-family: var(--font-mono); font-size: 13px; line-height: 20px; color: var(--ink-200); margin: 0; }
+.ed-file { font-family: var(--font-mono); font-size: 13px; line-height: 20px; color: var(--ink-200); margin: 0; }
 .nt-post-card h3 .nt-badge { vertical-align: middle; margin-left: var(--space-2); }
 .ed-empty { color: var(--ink-200); }
+
+/* PostCard from 768px puts the date in a left column spanning three rows; keep
+   the extra file-name line and the tags in the content column. */
+@media (min-width: 768px) {
+  .nt-post-card a.nt-post-link > .ed-file,
+  .nt-post-card a.nt-post-link > .nt-tags { grid-column: 2; }
+}

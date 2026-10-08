@@ -27,7 +27,7 @@ function icon(name) {
 
 // Callout kinds per the design system: note (cyan), warn (amber), danger (red).
 function callout(target, kind, title, message) {
-	const iconName = { note: 'check', warn: 'alert', danger: 'cross' }[kind];
+	const iconName = { note: 'help', warn: 'alert', danger: 'cross' }[kind];
 	const cls = kind === 'note' ? 'nt-callout' : `nt-callout nt-${kind}`;
 	target.replaceChildren(
 		el('aside', { class: cls, role: kind === 'danger' ? 'alert' : 'status' },
@@ -83,7 +83,8 @@ async function renderList() {
 		list.append(
 			el('li', { class: 'nt-post-card' },
 				el('a', { class: 'nt-post-link', href: `#/edit/${encodeURIComponent(post.file)}` },
-					el('span', { class: 'nt-eyebrow' }, el('time', { datetime: d.pubDate }, d.pubDate || 'no date')),
+					el('span', { class: 'nt-eyebrow' },
+						el('time', { datetime: d.pubDate }, d.pubDate || 'no date'), ` · ${post.minutes} min`),
 					el('h3', {}, d.title || '(untitled)', d.draft ? el('span', { class: 'nt-badge' }, 'Draft') : null),
 					d.description ? el('p', {}, d.description) : null,
 					el('p', { class: 'ed-file' }, post.file),
@@ -124,6 +125,7 @@ function renderNew() {
 	current = null;
 	slugTouched = false;
 	$('#edit-eyebrow').textContent = 'New post';
+	$('#edit-file').textContent = 'src/content/blog/<file name>.md';
 	$('#edit-heading').textContent = 'Write a new post';
 	$('#slug-field').hidden = false;
 	f.slug.value = '';
@@ -137,7 +139,8 @@ async function renderEdit(file) {
 	show('edit');
 	setNav(null);
 	$('#slug-field').hidden = true;
-	$('#edit-eyebrow').textContent = file;
+	$('#edit-eyebrow').textContent = 'Edit post';
+	$('#edit-file').textContent = `src/content/blog/${file}`;
 	$('#edit-heading').textContent = 'Loading…';
 	const status = $('#edit-status');
 	status.replaceChildren();
@@ -152,7 +155,7 @@ async function renderEdit(file) {
 
 function loadPost(post) {
 	current = { file: post.file, extra: post.extra, mtimeMs: post.mtimeMs };
-	$('#edit-eyebrow').textContent = `src/content/blog/${post.file}`;
+	$('#edit-file').textContent = `src/content/blog/${post.file}`;
 	$('#edit-heading').textContent = post.data.title || '(untitled)';
 	document.title = `${post.data.title || post.file} · Post editor`;
 	fillForm(post.data, post.body);

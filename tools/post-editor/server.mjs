@@ -59,6 +59,12 @@ async function listPostFiles(dir = BLOG_DIR) {
 	return files;
 }
 
+// Same formula as src/lib/reading-time.ts (words ÷ 220, +1).
+function readingTimeMinutes(body) {
+	const words = body.trim().split(/\s+/).filter(Boolean).length;
+	return Math.floor(words / 220) + 1;
+}
+
 async function readPost(full) {
 	const [text, info] = await Promise.all([readFile(full, 'utf8'), stat(full)]);
 	const { yaml, body } = splitPost(text);
@@ -76,6 +82,7 @@ async function readPost(full) {
 		},
 		extra,
 		body,
+		minutes: readingTimeMinutes(body),
 		mtimeMs: info.mtimeMs,
 	};
 }
