@@ -118,6 +118,15 @@ function slugify(text) {
 
 let slugTouched = false;
 
+// The file name is chosen once, when a post is created. Editing always saves
+// back to the opened file, so the field is removed from the form entirely.
+function setSlugField(creating) {
+	$('#slug-field').hidden = !creating;
+	f.slug.disabled = !creating;
+	f.slug.required = creating;
+	f.slug.value = '';
+}
+
 function renderNew() {
 	show('edit');
 	setNav('new');
@@ -127,8 +136,7 @@ function renderNew() {
 	$('#edit-eyebrow').textContent = 'New post';
 	$('#edit-file').textContent = 'src/content/blog/<file name>.md';
 	$('#edit-heading').textContent = 'Write a new post';
-	$('#slug-field').hidden = false;
-	f.slug.value = '';
+	setSlugField(true);
 	f.slug.removeAttribute('aria-invalid');
 	$('#edit-status').replaceChildren();
 	fillForm({ title: '', description: '', pubDate: today(), updatedDate: '', heroImage: '', tags: [], draft: true }, '');
@@ -138,7 +146,7 @@ function renderNew() {
 async function renderEdit(file) {
 	show('edit');
 	setNav(null);
-	$('#slug-field').hidden = true;
+	setSlugField(false);
 	$('#edit-eyebrow').textContent = 'Edit post';
 	$('#edit-file').textContent = `src/content/blog/${file}`;
 	$('#edit-heading').textContent = 'Loading…';
@@ -211,7 +219,7 @@ form.addEventListener('submit', async (event) => {
 			lastHash = location.hash;
 		}
 		setNav(null);
-		$('#slug-field').hidden = true;
+		setSlugField(false);
 		callout(status, 'note', 'Saved',
 			`Wrote src/content/blog/${post.file}. Review it with git diff, then commit and push it yourself.`);
 	} catch (err) {
